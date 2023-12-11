@@ -6,6 +6,7 @@ import {
   CreateButton,
   TopToolbar,
   ExportButton,
+  Title,
 } from 'react-admin';
 import { Grid, Card, CardMedia, CardContent, CardActions, Typography } from '@mui/material';
 // import inflection from 'inflection';
@@ -20,15 +21,18 @@ const ListActions = () => (
 
 const ModelList = () => {
   return (
-    <List
-      sort={{ field: 'name', order: 'ASC' }}
-      perPage={20}
-      pagination={false}
-      component="div"
-      actions={false}>
-      <ListActions />
-      <ModelGrid />
-    </List>
+    <>
+      <Title title="My custom page" />
+      <List
+        sort={{ field: 'name', order: 'ASC' }}
+        perPage={20}
+        pagination={false}
+        component="div"
+        actions={false}>
+        <ListActions />
+        <ModelGrid />
+      </List>
+    </>
   );
 };
 
